@@ -4,7 +4,7 @@
     <form id="form1" runat="server">
     <h1>Loại sản phẩm</h1><hr />
 
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataKeyNames="MaSanPham" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333">
+        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" DataKeyNames="MaSanPham" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="Black" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal">
             <EditItemTemplate>
 
                  MaSanPham:
@@ -33,8 +33,9 @@
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
-            <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <EditRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <InsertItemTemplate>
 
                       MaSanPham:
@@ -94,8 +95,7 @@
                 
                
             </ItemTemplate>
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
         </asp:FormView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" DeleteCommand="DELETE FROM [SanPham] WHERE [MaSanPham] = @MaSanPham" InsertCommand="INSERT INTO [SanPham] ([MaSanPham], [MaLoai], [TenSanPham], [DonGia], [SoLuong], [ChiTiet], [GhiChu]) VALUES (@MaSanPham, @MaLoai, @TenSanPham, @DonGia, @SoLuong, @ChiTiet, @GhiChu)" SelectCommand="SELECT * FROM [SanPham]" UpdateCommand="UPDATE [SanPham] SET [MaLoai] = @MaLoai, [TenSanPham] = @TenSanPham, [DonGia] = @DonGia, [SoLuong] = @SoLuong, [ChiTiet] = @ChiTiet, [GhiChu] = @GhiChu WHERE [MaSanPham] = @MaSanPham">
             <DeleteParameters>
